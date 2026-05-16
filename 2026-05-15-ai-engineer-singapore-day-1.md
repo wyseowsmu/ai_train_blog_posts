@@ -4,6 +4,21 @@ The conference was right here on our campus this week, and a big crew from the A
 
 I want to write this for the folks I keep running into in the lift lobby who say things like "I've been meaning to try ChatGPT properly" or "is this AI thing actually going to change my job?" Short answer: yes. Slightly longer answer: it already is, and the people on stage this week are the ones at the front edge of that change. Here's what they said, in plain English, and what I think it means for us.
 
+## Quick context — what is this thing?
+
+**AI Engineer Singapore** is the first AI Engineer flagship conference held in Asia — the local edition of the same series that's been running in San Francisco. Over **three days (15–17 May)**, it pulls in around **1,000 builders** and **91 speakers** from the companies actually shaping AI right now: OpenAI, Google DeepMind, Cursor, Vercel, Cognition, Z.ai, Cloudflare, Stripe, Figma, Microsoft AI, ElevenLabs, and more.
+
+The programme is split across **four tracks**, each aimed at a different audience:
+
+- **Software** — multi-agent systems, the MCP protocol, evaluations, context engineering.
+- **Design** — real-time voice, generative UI, multimodal workflows.
+- **Robotics + Foundation Models** — VLA training, humanoids, manipulation, agentic control loops.
+- **Leadership** — hiring, organisational design, enterprise rollout, AI-native transformation.
+
+The structure is a little unusual: **Day 1 (Friday) was held right here at SMU**, with hands-on workshops running alongside the Leadership Track all day (Cursor, OpenAI Codex, Google DeepMind, Arize, Vercel, LlamaIndex, Z.ai, Cloudflare, AWS+Stripe, and others — the people who built the tools, teaching you how to use them). **Days 2 and 3** then move down the road to the Capitol Kempinski for the Software, Design, and Robotics talks.
+
+The folks I'm writing up below were all on the Leadership Track — so the questions on the table were less "how do I build this?" and more "how does an organisation actually absorb this change without falling over?" Which, for an institution our size, is the more interesting question anyway.
+
 The single sentence version of the whole day: **AI has gotten so good at *doing* things that the hard part is no longer doing — it's deciding what to do, checking that it's right, and trusting the result.** That sounds simple. The implications are not.
 
 ---
@@ -120,4 +135,4 @@ If you only remember three things from this post:
 
 3. **Trust, but check.** AI gets a lot of things right. It also confidently gets things wrong. The people who do well with it are the ones who treat it like a very fast, very enthusiastic intern: useful, but not unsupervised.
 
-Day two coming after I've recovered. Come find one of us from the AI Team or IITS in the hallway if you want to chat — we are extremely happy to nerd out about this with anyone who's curious.
+Day two and three are off-campus at the Capitol Kempinski, where the action shifts to the Software, Design, and Robotics tracks — including a keynote from Dr Vivian Balakrishnan on AI adoption in Singapore. I'll write those up too. In the meantime, come find one of us from the AI Team or IITS in the hallway if you want to chat — we are extremely happy to nerd out about this with anyone who's curious.
