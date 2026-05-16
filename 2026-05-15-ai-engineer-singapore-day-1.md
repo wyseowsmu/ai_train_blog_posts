@@ -23,6 +23,44 @@ The single sentence version of the whole day: **AI has gotten so good at *doing*
 
 ---
 
+## 9:00am — Building an AI-Native Startup: Lessons from Belli
+
+*Jeff Pan, Founder, Belli*
+
+Jeff opened the Leadership track with the most unexpectedly grounded talk of the day. **Belli** is a Singapore-based startup building software for air cargo — the unglamorous, deeply technical business of moving freight on aeroplanes. His team is six people. His customers are airlines. And he's an SMU local — Belli's office is on our campus, and they hire SMU interns.
+
+What's interesting is the path Jeff took to get there: hostels → hotel SaaS → SE Asia → SpaceX → consulting → airline → cargo. Twenty years of pattern-matching across very different industries, ending with the conviction that cargo software is broken in a fixable way.
+
+His framing for *why* Belli works against much bigger incumbents:
+
+| What he hated about cargo systems | How Belli does it |
+|---|---|
+| Cargo people who don't understand software | A 6-person core team of ex-AirAsia cargo engineers — domain *and* software |
+| Software people who don't understand cargo | No change requests; on-site engineering at the airline |
+| Stitching together terrible legacy systems | One end-to-end, modular, next-generation system |
+
+But the part that hit me hardest — and the part most relevant to anyone running a team at SMU — was the second half of his talk, which was actually about how his **company operates internally**. The lessons he calls "lessons from Belli" aren't AI tricks. They're old-school, boring operational habits. The twist is that those habits turn out to be **exactly what makes a startup AI-native** in 2026.
+
+Here are the principles he laid out, with my translation for non-startup folks:
+
+- **Accessible and editable.** Everything at Belli is open by default — payroll, bank balance, VC conversations, founder emails. Anyone can see anything. Jeff is blunt about why: friction kills both alignment and velocity. *And* — the part he didn't say but is obvious — a company whose internal context is fully accessible is a company an AI agent can actually be useful in. An AI can only help if it can see.
+- **Single source of truth.** One canonical place for everything. No duplicates. Predictable URLs (he showed a slide where his own onboarding doc lives at `belli.sg/passport-jeff`). The intuition: if a new joiner can find anything in five seconds, so can an AI.
+- **Unselfish documentation.** You write things down not because you'll need them, but because someone else will. He framed this as a values question, not a process one.
+- **Index everything.** Every meeting, every decision, every Slack thread gets logged somewhere findable. Indexing is the difference between "we discussed that" and "here's exactly what we decided, when, and why."
+- **Be a goldfish.** Don't carry grudges, don't relitigate decisions. Move on.
+- **High impact-to-noise ratio.** Mute aggressively. Channels and tags exist for a reason. Quiet by default.
+- **Asynchronous.** Default to writing, not meeting.
+- **Speed > perfection.** They run a weekly internal leaderboard with a $100 prize for the most posts. The goal is to overcome the fear of publishing something imperfect.
+- **Teaching as a core skill.** Everyone is expected to be able to explain their work to someone else in the room. He uses "how long would it take you to teach X to someone?" as a proxy for how well you actually understand it.
+
+The meta-point Jeff was making, and the reason this talk belonged in an AI conference: **AI doesn't reward heroic individual brilliance. It rewards organisations whose knowledge is captured, structured, findable, and shareable.** The habits Belli built to be a fast-moving startup turn out to be the same habits that let them point AI agents at their entire company and get useful output.
+
+If your team's institutional knowledge lives in people's heads, in PDFs nobody can find, in Slack threads from 2023, in spreadsheets on someone's laptop — you don't have an AI problem, you have a *fundamentals* problem. AI just makes that problem newly expensive.
+
+**My take for SMU folks:** look at Jeff's principles list and ask honestly: how many of those apply to your team? That's roughly your AI-readiness score. The good news: these aren't moonshots. They're things you can start doing on Monday.
+
+---
+
 ## Talk 1 — "Engineers are becoming fleet managers"
 
 *Nick Miller, Cursor*
