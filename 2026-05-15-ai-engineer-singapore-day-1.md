@@ -1,6 +1,6 @@
 # A Day at AI Engineer Singapore — What I Heard, and Why It Matters for the Rest of Us at SMU
 
-AI Engineer Singapore landed on the SMU campus this week, and a good chunk of the AI Team and IITS spent day one in the Leadership Track. This post is for everyone who didn't make it — especially the non-technical folks across SMU who keep hearing about AI changing everything and want a straight answer about whether that's actually true.
+AI Engineer Singapore kicked off on the SMU campus this week — day one was hosted right here before the rest of the conference moved off-site — and a good chunk of the AI Team and IITS spent it in the Leadership Track. This post is for everyone who didn't make it, especially the non-technical folks across SMU who keep hearing about AI changing everything and want a straight answer about whether that's actually true.
 
 Short answer: yes. Slightly longer answer: it already is, and the people on stage this week are the ones at the front edge of that change. Below is what they said, in plain English, and what I think it means for us.
 
