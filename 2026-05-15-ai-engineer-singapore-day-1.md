@@ -1,130 +1,123 @@
-# AI Engineer Singapore 2026 — Day 1 Notes from the Leadership Track
+# A Day at AI Engineer Singapore — What I Heard, and Why It Matters for the Rest of Us at SMU
 
-I spent day one of AI Engineer Singapore at the SMU campus, parked in the Leadership Track. The through-line across almost every session was the same: the model isn't the bottleneck anymore — your operating model is. Here are the talks that stuck with me, what each speaker actually said, and what I'm bringing back to my own team.
+The conference was right here on our campus this week, and a big crew from the AI Team and IITS spent day one in the Leadership Track. If you weren't there, don't worry — that's what this post is for.
 
-## 9:30am — Deploying AI Coding Agents Inside Modern Engineering Organisations
+I want to write this for the folks I keep running into in the lift lobby who say things like "I've been meaning to try ChatGPT properly" or "is this AI thing actually going to change my job?" Short answer: yes. Slightly longer answer: it already is, and the people on stage this week are the ones at the front edge of that change. Here's what they said, in plain English, and what I think it means for us.
 
-**Nick Miller, Field Engineer, Cursor**
+The single sentence version of the whole day: **AI has gotten so good at *doing* things that the hard part is no longer doing — it's deciding what to do, checking that it's right, and trusting the result.** That sounds simple. The implications are not.
 
-Nick opened by reframing engineering as fleet management. Engineers aren't just writing code anymore — they're directing a swarm of agents and being judged on what the fleet produces. The lines I underlined:
+---
 
-- Specs matter more than ever, because agents need clear direction and boundaries.
-- The real bottleneck is verification, not generation.
-- Backlog *size* matters less than the *kind* of work being assigned.
-- Maintenance should be automated into the workflow, not treated as a separate burden.
-- Expect more async collaboration with AI agents — that changes meeting cadence, on-call, and review.
+## Talk 1 — "Engineers are becoming fleet managers"
 
-The honest implication is uncomfortable: if your team still measures throughput in tickets closed, you're measuring the wrong thing. Good specs, tests, and observability are now core infrastructure — not nice-to-haves.
+*Nick Miller, Cursor*
 
-## 10:00am — Future Companies and the Software Factory of the Future
+Nick kicked things off with a metaphor I haven't stopped thinking about. He said software engineers used to be like skilled craftspeople, each making one thing at a time at their workbench. Now, with AI, they're more like the manager of a small factory — directing a whole team of AI helpers, each one doing a task in parallel.
 
-**Geoff Huntley**
+If you've ever delegated work to a new hire, you know the feeling: *briefing* the person well becomes more important than doing the task yourself. Same thing here. A clearer brief produces better work. A vague brief produces a mess, faster.
 
-Geoff's session was the spiciest of the day. His argument: software development has been fundamentally commoditized, and the economics of building software have already changed. Token efficiency, harness choice, and model selection are now first-class engineering decisions.
+For non-engineers: the same shift is coming to your inbox, your slide decks, your case notes. You're not going to be "the person who writes the report" anymore — you're going to be the person who briefs an AI to draft it, then checks it, then ships it.
 
-Some of the lines that landed loudest in the room:
+## Talk 2 — "Have you had your 'oh f***' moment yet?"
 
-- "If people still haven't had their 'oh f***' moment after two years, they're behind."
-- Claude Code is inefficient on token consumption — the harness matters more than people think.
-- Software development now costs less than minimum wage when agents run in loops.
-- Everyone is now effectively a software developer, even if they're not an engineer.
-- Stop hiring on legacy identity signals. Hire on engineering capability.
-- If you have no tests, you're screwed.
-- Compiler feedback and strong type systems are useful back-pressure against hallucination.
-- Open source is less attractive when you can generate first-party code and own the supply chain.
+*Geoff Huntley*
 
-His punchline: durable advantage comes from practice, taste, tooling, and systems that constrain bad output. The bottom of the org is in a "people transformation program." The top is already compounding.
+Geoff's talk was the one everyone was quoting at the coffee break. He did not pull punches. The blunt version of his thesis: a huge amount of professional knowledge work has just become a *lot* cheaper to produce, and if you've been working in tech for two years and you haven't yet had the moment where you sit back and go "oh… *oh no*"… you are, in his words, behind.
 
-## 11:00am — Turning AI Pilots into Business Impact
+A few of his lines that landed:
 
-**Andy Brown, OpenAI**
+- Everyone is now effectively a software developer, even if they don't think of themselves as one. The cost of writing a small tool to solve your own problem has collapsed.
+- The half-life of "I learned how to do X, so I have a job doing X" is getting shorter.
+- The most valuable skills are now *taste* (knowing what good looks like), *judgment* (knowing what to ask for), and *systems thinking* (knowing how the pieces fit).
 
-Andy's talk was less about models and more about deployment. The framing I liked best: *intelligence is abundant now, the new constraint is deployment*. The productivity era was a stepping stone; the real prize is workflow redesign.
+If that sounds scary, it's meant to. But the upside he ended on: the people who lean into this — who actually use these tools every day, on real problems — pull away from the rest of the pack very quickly. The gap between "I've tried it once" and "I use it every day" is now huge.
 
-Notes:
+**My take for SMU folks:** if you've been waiting for permission, this is it. Pick one annoying task you do every week and try to do it with AI instead. That's the entire ask.
 
-- OpenAI is positioning itself as an enterprise company, not just a consumer one.
-- Consumer adoption is pulling enterprise adoption forward — people already trust the tools personally.
-- Frontier firms aren't winning because they have better models. They're winning because they've embedded AI deep into core workflows — finance, engineering, customer ops, support, sales, decision-making.
-- A "Chief of Staff" agent should make you more *effective*, not just *faster*.
-- Recursive self-learning and sub-agents make systems materially better.
-- Broad access and executive buy-in are the two biggest reasons companies move beyond pilots.
-- If leaders don't use the tools themselves, transformation stalls. Every time.
+## Talk 3 — "Intelligence is abundant. Deployment is the constraint."
 
-The biggest gains come from embedding intelligence *into* the business, not layering it on top. That distinction is doing a lot of work, and most enterprise AI projects I've seen fail because they got it backwards.
+*Andy Brown, OpenAI*
 
-## 11:30am — The Next Wave of Applied AI
+This was the most strategic talk of the morning. Andy's point: a few years ago, the question was "can the AI do this?" Today, the answer is almost always yes. The new question is "how do we get this *into* the way our organisation actually works?"
 
-**JJ Geewax, Director, Applied AI, Google DeepMind**
+He drew a sharp line between two kinds of organisations:
 
-This was the most practitioner-flavored session of the day. JJ's argument: weekend projects work, but production systems fail unless they're decomposed and controlled.
+- **The ones giving employees access to AI tools** and hoping good things happen.
+- **The ones redesigning the actual workflow** — the way a finance close happens, the way a customer ticket gets resolved, the way a course is built — around what AI can now do.
 
-The advice I'm taking home:
+The second group is leaving the first group behind. Not because they have a better model (everyone has access to the same models), but because they've done the hard work of asking *"what would this process look like if we redesigned it from scratch today?"*
 
-- Don't shove all logic into the system prompt.
-- Use deterministic routing and logging so decisions can be explained later.
-- No model is permanent — keep your framework model-agnostic.
-- Output filters and verifier models are useful for safety and "wisdom" checks. A verifier model is often better than trying to make one giant prompt do everything.
-- Memory is a consolidation-plus-ranking problem. It's not a solved feature.
-- Retrieval, memory, and fine-tuning are all useful, but only with clear constraints and good data.
-- Fine-tuning is only useful with strong data and a specific target behavior.
-- Evals are necessary to know whether the system is good enough.
-- Adoption improves when people are allowed to experiment without pressure. Fear of looking behind is a major blocker.
+He also said something that I think every senior person at SMU should write on a sticky note: **if leaders don't use the tools themselves, transformation stalls.** You can't direct a transformation you've never personally experienced.
 
-The meta-lesson: production AI is mostly engineering discipline — control, routing, observability, trust. Retrieval, memory, fine-tuning are tools you reach for with intent, not defaults you turn on.
+## Talk 4 — "Weekend projects work. Production systems don't."
 
-## 12:00pm — More Than the Creator of GLM
+*JJ Geewax, Google DeepMind*
 
-**Zixuan Li, Head of Z.ai**
+JJ runs Applied AI at Google. His talk was a reality check for anyone who's been impressed by a flashy demo. A demo where the AI does one cool thing once, on stage, is not the same as a system that does the right thing thousands of times a day for real users.
 
-Zixuan pitched GLM as a broad frontier platform and made a strategic case for open weights: security, control, local deployment, and ecosystem diversity. But the more interesting part was his framing of token consumption as a *mindset*.
+The gap between the two is where most AI projects die. His advice for closing it, translated for normal humans:
 
-- GLM started from research and became both a model and a brand.
-- Open weights matter because enterprises want security, control, and local deployment. Fine-tuning and adaptation expand model diversity and usefulness.
-- The right question isn't "how many tokens did you use?" — it's "what problems did you solve?"
-- Token consumption should signal deeper work, more rigorous evaluation, faster experimentation — not be a vanity leaderboard.
-- Intelligence is a moving target, not a static score.
-- AI-native orgs are defined by how people contribute *context* to AI systems.
-- Hierarchy only makes sense when there are real layers of context and access.
-- If someone can't contribute useful context, they may not add value in an AI-native setup.
+- **Break the problem into small pieces.** Don't ask the AI to do everything in one shot. Ask it to do step 1, then step 2, then step 3. Each step is easier to check.
+- **Keep a paper trail.** When AI makes a decision, log what it did and why. If something goes wrong later, you need to be able to trace it.
+- **Have a second AI check the first one's work.** Sounds silly. Works surprisingly well.
+- **Memory is hard.** Getting an AI to "remember" the right things at the right time is one of the unsolved problems.
+- **Let people play.** The biggest blocker to adoption isn't the technology — it's the fear of looking stupid. Teams that give their people permission to experiment, without judgment, learn faster.
 
-That last point is going to age either really well or really controversially. Either way, it sharpens the question: what *is* the unit of contribution in an AI-native org?
+That last point is the one I'd most like our leadership to internalise.
 
-## 2:00pm — Managing Background Agents as an Engineering Workforce
+## Talk 5 — "Stop counting tokens. Start counting problems solved."
 
-**Ben Lau, Cognition**
+*Zixuan Li, Head of Z.ai*
 
-Ben picked up the fleet-management thread Nick opened the day with, and pushed it further. His argument: synchronous and asynchronous workflows now coexist, and teams need both.
+Zixuan leads the team behind GLM, one of the major open-source AI models. His talk was partly about why open models matter (you can run them yourself, you control your data, you're not locked into one vendor) but the part that resonated most was a more philosophical point about *measurement*.
 
-- Engineers are becoming fleet managers, not just individual contributors.
-- Long-running agents work while humans sleep. That alone changes the operating model.
-- The right abstraction is no longer just a ticket — it's a well-written spec.
-- Industrializing spec production is becoming a competitive advantage.
-- Generation is cheap. Verification is scarce. Teams need to *own* testing instead of handing it off.
-- Maintenance work — CVEs, CI flakes, dep bumps — is moving from reactive to ambient.
-- Senior judgment matters *more*, not less, when agents handle routine work.
-- Humans still own accountability. AI should empower them, not replace them.
+A lot of organisations are starting to brag about how many AI "tokens" they consume — basically, how much AI compute they burn through. Zixuan's argument: that's the wrong scoreboard. The right question is **"what problems did we actually solve?"**
 
-## 2:30pm — Tracing and Evals with Skills
+He also said something that I'm still chewing on: an "AI-native" organisation is one where every person's value is, in part, measured by how much useful *context* they can give to the AI systems around them. The institutional knowledge that lives in your head — the unwritten rules, the lessons learned, the "we tried that in 2019 and here's why it didn't work" — is now a strategic asset *only* if you can get it into a form the AI can use.
 
-**Fuad Ali, Arize**
+That's a striking reframe of what "knowledge work" even means.
 
-Short and direct: AI is changing software work now, and teams need to adapt rather than wait. Fuad's session was a call to treat internal knowledge as structured, testable context, and to invest hard in observability.
+## Talk 6 — "Long-running agents work while you sleep"
 
-- Product and engineering work will be judged by how well it leverages agents.
-- Your knowledge base should be a pristine context layer that agents can consume. Treat internal context as simple markdown-like sources.
-- There's no fixed architecture yet — you have to build and test it yourself.
-- Skills need evals, or you can't tell if they're good.
-- The ecosystem hasn't caught up to large-scale skill testing yet.
-- Browser traces and execution traces are how you actually understand agent behavior.
-- People should try these systems themselves instead of assuming the answer is obvious.
+*Ben Lau, Cognition*
 
-## What I'm taking home
+Ben picked up Nick's "fleet manager" idea and pushed it further. His company builds AI agents that run for hours at a time — they get a task at the end of your workday, work on it overnight, and have a draft waiting for you in the morning.
 
-If I had to compress day one into three sentences:
+That's not science fiction anymore. It's running in production at real companies right now.
 
-1. **Verification is the new bottleneck.** Generation has effectively gone to zero. Tests, evals, type systems, and verifier models are the constraint now.
-2. **Operating model beats tooling.** The companies pulling ahead aren't the ones with access to better models — they're the ones who've redesigned their workflows around agents.
-3. **Specs are the new tickets.** The teams investing in clear specifications and pristine internal context are going to compound. Everyone else will keep generating slop faster.
+Implications he flagged:
 
-Day two notes coming after I've had a chance to recover. If you were there and your takeaways differ, I'd love to hear it.
+- **The unit of work is changing.** It used to be a "ticket" — a small task someone could do in an afternoon. Now it's a "spec" — a clearly written description of an outcome you want, that an agent can work on for a long time.
+- **Writing a good spec is becoming a competitive advantage.** People who can describe what they want, clearly and completely, will out-produce people who can't, by a wide margin.
+- **The boring work goes ambient.** Routine maintenance — the digital equivalent of changing light bulbs — increasingly happens in the background, without anyone explicitly assigning it.
+- **Senior judgment matters more, not less.** When AI handles the routine, what's left is the genuinely hard calls. Those still need humans.
+
+## Talk 7 — "If you can't measure it, you can't trust it"
+
+*Fuad Ali, Arize*
+
+Fuad closed out the day with the least glamorous but maybe most important message: **how do you know if your AI is actually any good?**
+
+His point: organisations are racing to deploy AI, but very few are investing in the boring infrastructure that tells you whether it's working. Things like:
+
+- Tests that check the AI is giving the right answers.
+- Logs that show what the AI actually did, step by step.
+- Ways to measure whether a new version is better or worse than the old one.
+
+His blunt take: the AI industry has not yet caught up to its own needs here. The tools are immature. So if you're deploying AI in your organisation, you may have to build some of this yourself — or at minimum, you need someone whose job is to *check* the AI, not just *use* it.
+
+For SMU specifically: any time we put AI in front of students, staff, or researchers, we need to be asking "how would we know if this went wrong?" before we ask "how do we ship it?"
+
+---
+
+## Three things I want everyone at SMU to take away
+
+If you only remember three things from this post:
+
+1. **You don't need to be technical to use this stuff.** The biggest barrier isn't knowledge, it's the willingness to try. Pick one task this week. Use AI to do it. That's it.
+
+2. **The future favours people who write clearly.** A clear brief produces good AI output. A vague brief produces garbage. The single most valuable skill in an AI-native world might just be the ability to describe what you want, in plain words, with enough detail that someone (or something) else could do it.
+
+3. **Trust, but check.** AI gets a lot of things right. It also confidently gets things wrong. The people who do well with it are the ones who treat it like a very fast, very enthusiastic intern: useful, but not unsupervised.
+
+Day two coming after I've recovered. Come find one of us from the AI Team or IITS in the hallway if you want to chat — we are extremely happy to nerd out about this with anyone who's curious.
