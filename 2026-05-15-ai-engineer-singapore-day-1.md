@@ -1,8 +1,8 @@
 # A Day at AI Engineer Singapore — What I Heard, and Why It Matters for the Rest of Us at SMU
 
-The conference was right here on our campus this week, and a big crew from the AI Team and IITS spent day one in the Leadership Track. If you weren't there, don't worry — that's what this post is for.
+AI Engineer Singapore landed on the SMU campus this week, and a good chunk of the AI Team and IITS spent day one in the Leadership Track. This post is for everyone who didn't make it — especially the non-technical folks across SMU who keep hearing about AI changing everything and want a straight answer about whether that's actually true.
 
-I want to write this for the folks I keep running into in the lift lobby who say things like "I've been meaning to try ChatGPT properly" or "is this AI thing actually going to change my job?" Short answer: yes. Slightly longer answer: it already is, and the people on stage this week are the ones at the front edge of that change. Here's what they said, in plain English, and what I think it means for us.
+Short answer: yes. Slightly longer answer: it already is, and the people on stage this week are the ones at the front edge of that change. Below is what they said, in plain English, and what I think it means for us.
 
 ## Quick context — what is this thing?
 
