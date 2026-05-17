@@ -1,4 +1,4 @@
-# The Forward Deployed Minister — Dr Vivian Balakrishnan at AI Engineer Singapore
+# AI Engineer Singapore, Day 2: The Forward Deployed Minister
 
 This is the writeup I promised at the end of the Day 1 post. The keynote everyone in the building had come to see was Dr Vivian Balakrishnan — Minister for Foreign Affairs, former Minister-in-charge of the Smart Nation Initiative, retired eye surgeon, and (this still feels strange to type) one of the very few sitting government ministers anywhere in the world who actively writes code.
 
