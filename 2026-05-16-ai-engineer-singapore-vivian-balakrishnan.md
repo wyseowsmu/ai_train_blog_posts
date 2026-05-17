@@ -14,13 +14,13 @@ He opened by introducing himself with characteristic dryness: *"I'm actually a r
 
 > *"We're now at an age when you can outsource a lot of stuff — calculations, computation, memory, replication, dissemination of knowledge. The one thing which you cannot outsource is your personal understanding. And if you are in a position of authority, you can delegate work. You can't delegate accountability."*
 
-This is the line I most want senior leadership at SMU to hear. The point is not anti-AI — he is plainly an AI enthusiast. The point is that the *output* of an AI-augmented workflow still has to be owned by a human being who genuinely understands it. Especially if that human is the one signing things, deciding things, or being held to account for them.
+The point isn't anti-AI — he is plainly an AI enthusiast. The point is that the *output* of an AI-augmented workflow still has to be owned by a human being who genuinely understands it, especially if that human is the one signing things, deciding things, or being held to account for them.
 
 Later in the talk he pushed this further into a line he attributed (somewhat suspiciously) to Claude, but said he agreed with anyway:
 
 > *"You cannot govern a technology that you have only been briefed on. You'd better get your hands dirty — and then you understand both the potential and the limits and the problems."*
 
-He explicitly framed that as a shoutout to his government colleagues. It applies just as well to deans, directors, and department heads.
+He explicitly framed that as a shoutout to his government colleagues. The same logic generalises easily to any institution where decisions are made about a technology by people who have never personally used it.
 
 ## Takeaway 2 — Real value is created workflow by workflow, not at the frontier
 
@@ -69,7 +69,7 @@ He was also pointedly modest about the engineering:
 
 > *"You know, there's this whole thing about vibe coding. I won't even dare to claim I was vibe coding. I was just assembling tools."*
 
-But — and this is the part I want non-engineers at SMU to hear — he is clear that *reading* code matters even when you aren't writing it. He reviews the code NanoClaw asks him to approve before granting bash access. *"It does help if you don't understand coding, so you understand what's going on, even if you're not actually typing and editing code in the raw."*
+He was also clear that *reading* code matters even when you aren't writing it. He reviews the code NanoClaw asks him to approve before granting bash access. *"It does help if you don't understand coding, so you understand what's going on, even if you're not actually typing and editing code in the raw."*
 
 ## "For a man with a hammer, everything looks like a nail"
 
@@ -131,14 +131,14 @@ Then he walked off stage, sat down next to **Gabriel Cohen**, the creator of Nan
 
 ---
 
-## Three things I want everyone at SMU to take away
+## Three threads worth pulling on
 
-I'll try to mirror his structure here. If you only remember three things:
+The talk had a clean three-part structure of its own; here are the three threads that seem most worth carrying back into a university context.
 
-1. **You cannot delegate accountability.** AI can draft your report, prep your meeting, summarise your inbox, build your slides. None of that removes the requirement that *you* understand the thing you are putting your name on. The minister's whole point about "personal understanding" is the most senior-leadership-flavoured argument I've heard for actually using these tools yourself rather than receiving demos of them.
+1. **Accountability doesn't get delegated.** AI can draft a report, prep a meeting, summarise an inbox, build a deck. None of that changes who owns the output. The minister's "personal understanding" argument is essentially a working definition of what an AI-augmented professional looks like: someone who can read what their tools produced, recognise where it's right and where it isn't, and put their name on it deliberately.
 
-2. **Value lives in workflows, not in models.** Everyone has access to the same frontier models. What separates the institutions that pull ahead from the ones that don't is whether they have done the unsexy work of *re-engineering an actual workflow* — a course, an admissions process, a finance close, a research review — around what AI can now do. Start with one workflow you know intimately. That's where your edge is.
+2. **Value lives in workflows, not in models.** Everyone has access to the same frontier models. The institutions that pull ahead seem to be the ones doing the unsexy work of *re-engineering an actual workflow* — a course, an admissions process, a finance close, a research review — around what AI can now do. Models are a commodity. Workflows are not.
 
-3. **The barrier to entry is now embarrassingly low.** A retired eye surgeon, in spare time, on a three-year-old Raspberry Pi with 8 GB of RAM, built a system he uses every day to do a globally consequential job. Whatever you have been telling yourself about why you can't start — it's almost certainly wrong. The minister's closing instruction, with his blessing as a senior official: get your hands dirty.
+3. **The barrier to entry is genuinely low now.** A retired eye surgeon, in spare time, on a three-year-old Raspberry Pi with 8 GB of RAM, built a system he uses every day to do a globally consequential job. Whatever the old story was about why this stuff is for someone else — it has aged badly.
 
-Come find any of us from the AI Team or IITS if you want to talk about what a Singapore-university version of this might look like for our own work. We have some ideas. And, more importantly, a Raspberry Pi.
+If any of the above resonates and you want to compare notes, the AI Team and IITS are around. We also, as it happens, have a Raspberry Pi.
