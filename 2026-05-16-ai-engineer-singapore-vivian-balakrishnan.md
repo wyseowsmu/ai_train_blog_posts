@@ -8,7 +8,23 @@ He had set the bar himself a few weeks earlier by quietly posting the full archi
 
 What we got was not a politician's speech. It was much more interesting than that. The full session is on YouTube (his segment begins around the 45-minute mark) and what's below is built directly off the transcript.
 
-One quick orienting note for context. This keynote was a single 25-minute slot inside a packed three-day programme — roughly **1,000 builders, 91 speakers, four parallel tracks** (Software, Design, Robotics + Foundation Models, Leadership), with hands-on workshops from OpenAI, Google DeepMind, Cursor, Vercel and others running alongside the talks. The minister's session was the headline opener, but it was one item among many; the [full schedule is here](https://www.ai.engineer/singapore#schedule) if you want to see what else was on, and this post deliberately covers only his segment. Other sessions from the day will get their own writeups.
+One quick orienting note for context. The minister's session — officially titled *["Building a 'Second Brain': Opportunities, Risks, and Implications for AI Adoption in Singapore"](https://www.ai.engineer/singapore#schedule)* — was the **8:40am Day 2 opener** on the Software track, but it was one slot in a relentlessly packed day. Some of what ran in the next eight hours, just to give a flavour:
+
+- **9:00am — Gavriel Cohen (NanoCo)**, the creator of the NanoClaw harness the minister had just spent twenty minutes demoing, talking about NanoClaw's own internal agent factory.
+- **9:18am — Thibault Sottiaux**, Head of Codex at **OpenAI**, on amplifying every builder with agents.
+- **9:41am — Dr Feng Yuzhang (GovTech Singapore)** on AI transformation across the Singapore government.
+- **10:40am — Jimmy Lai (Vercel)** on shipping with Next.js.
+- **11:03am — Vedran Jukic (Daytona)** on why sandboxes are non-negotiable for autonomous agents.
+- **11:16am — Greptile** on what they learned from analysing five million vibe-coded PRs.
+- **12:08pm — Mark Doyle (Stripe)** on Stripe's one-shot end-to-end coding agents.
+- **1:39pm — Ryo Lu**, Head of Design at **Cursor**, on designing the next Cursor.
+- **2:02pm — Aosheng Ran (Figma)** on designing multi-modal, multiplayer AI.
+- **2:54pm — Andrew Tan (Groq)** on scaling low-latency LLM inference.
+- **3:07pm — Daria Soboleva (Cerebras)** on MoE at wafer scale.
+- **3:35pm — Zixuan Li (Z.ai)** on GLM-5.1 and long-horizon tasks.
+- **3:58pm — Boris Starkov (ElevenLabs)** on what makes an agent conversational.
+
+…and that's just a slice. Four parallel tracks (Software, Design, Physical AI, and a Demo Stage) ran in parallel through the day. The [full schedule is here](https://www.ai.engineer/singapore#schedule). This post deliberately covers only the minister's segment — the rest will get their own writeups.
 
 He opened by introducing himself with characteristic dryness: *"I'm actually a retired eye surgeon. Took a detour into politics for perhaps too long… I assemble watches, I reprogram appliances, and now there's some other stuff which is what I'm going to talk about today."* And then, unusually for a keynote, he jumped straight to the end and stated his three takeaways upfront — *"you can forget everything I've said but just bear these things in mind."* The whole rest of the talk hung off those three.
 
@@ -47,8 +63,8 @@ The proof of that claim was the rest of the talk: a walk-through of his own setu
 Here is, in his own framing, the stack he actually runs every day:
 
 - **Hardware.** *"My most daily-used agent is running off a Raspberry Pi which is at least two or three years [old]. All it has is 8 GB of RAM."* That's it. That's the machine.
-- **Agent harness: NanoClaw**, by **Gabriel Cohen** (who took the stage right after him). He had originally been excited by the broader hype around "open-claw"-style agents but ruled them out for security reasons given his role. NanoClaw won him over because the codebase is short enough that *"even an idiot like me can read and sort of understand [it]"*, it's containerised (the surgeon in him spoke up here: *"there's no such thing as a routine operation and things will go wrong, and when they do break, hopefully you want them to break within barriers"*), and it has effectively no config — the LLM handles the customisation, which means *"everyone running an instance of NanoClaw is running an individualised system."*
-- **Brains:** Claude (he was clear NanoClaw v2 should treat *all* major models as first-class citizens — he's asked Gabriel for this by 15 June).
+- **Agent harness: NanoClaw**, by **Gavriel Cohen** (CEO of NanoCo, who took the stage at 9am right after the minister to talk about NanoClaw's own internal agent factory). He had originally been excited by the broader hype around "open-claw"-style agents but ruled them out for security reasons given his role. NanoClaw won him over because the codebase is short enough that *"even an idiot like me can read and sort of understand [it]"*, it's containerised (the surgeon in him spoke up here: *"there's no such thing as a routine operation and things will go wrong, and when they do break, hopefully you want them to break within barriers"*), and it has effectively no config — the LLM handles the customisation, which means *"everyone running an instance of NanoClaw is running an individualised system."*
+- **Brains:** Claude (he was clear NanoClaw v2 should treat *all* major models as first-class citizens — he's asked Gavriel for this by 15 June).
 - **WhatsApp bridge: Baileys.** *"I suspect it's probably not entirely in keeping with what Meta or WhatsApp would like us to do, because it's actually simulating… a pseudo-terminal."* He says this with a small smile.
 - **Voice: Whisper**, so he can talk to it rather than type, and it talks back.
 - **Memory: Neman** — *"this obscure piece of software… I still haven't met the developers… a memory system with graphs."* Entities as nodes, edges for causality, temporal relationships, semantic links.
@@ -129,7 +145,7 @@ The public-policy goal, in his words, is *democratisation of these tools* — an
 
 > *"This conference was organised less than three months ago. 65 labs. All the people you meet here — this is all not even their day job. It's a hack, right? But this is the way I believe the future is going to be created."*
 
-Then he walked off stage, sat down next to **Gabriel Cohen**, the creator of NanoClaw, who I'll write up separately.
+Then he walked off stage, and the 9am slot belonged to **Gavriel Cohen** — CEO of NanoCo and the creator of the harness the minister had just spent twenty minutes demoing — who I'll write up separately.
 
 ---
 
