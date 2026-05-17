@@ -8,6 +8,8 @@ He had set the bar himself a few weeks earlier by quietly posting the full archi
 
 What we got was not a politician's speech. It was much more interesting than that. The full session is on YouTube (his segment begins around the 45-minute mark) and what's below is built directly off the transcript.
 
+One quick orienting note for context. This keynote was a single 25-minute slot inside a packed three-day programme — roughly **1,000 builders, 91 speakers, four parallel tracks** (Software, Design, Robotics + Foundation Models, Leadership), with hands-on workshops from OpenAI, Google DeepMind, Cursor, Vercel and others running alongside the talks. The minister's session was the headline opener, but it was one item among many; the [full schedule is here](https://www.ai.engineer/singapore#schedule) if you want to see what else was on, and this post deliberately covers only his segment. Other sessions from the day will get their own writeups.
+
 He opened by introducing himself with characteristic dryness: *"I'm actually a retired eye surgeon. Took a detour into politics for perhaps too long… I assemble watches, I reprogram appliances, and now there's some other stuff which is what I'm going to talk about today."* And then, unusually for a keynote, he jumped straight to the end and stated his three takeaways upfront — *"you can forget everything I've said but just bear these things in mind."* The whole rest of the talk hung off those three.
 
 ## Takeaway 1 — You cannot outsource your personal understanding
