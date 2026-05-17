@@ -4,7 +4,7 @@ This is the writeup I promised at the end of the Day 1 post. The keynote everyon
 
 Someone in the coffee queue afterwards called him a *"forward deployed minister"* — a riff on the **forward deployed engineer**, the now-fashionable role for engineers who embed directly with customers, build prototypes in the field, and refuse to be insulated from the actual work. It is exactly the right framing for what he did on stage. He wasn't there as a politician describing AI from the outside. He was there as a practitioner, deployed into his own workflow, showing the room what he had built with his own hands.
 
-He had set the bar himself a few weeks earlier by quietly posting the full architecture of his personal AI assistant — **NanoClaw**, running on a Raspberry Pi in his office — on his own Facebook. By the time he walked on stage at the Capitol Theatre, that writeup had been picked up by SCMP, dissected on X, and reposted by half of AI Twitter. The expectations in the room were, fair to say, high.
+He had set the bar himself a few weeks earlier by quietly posting the full architecture of his personal AI assistant — **NanoClaw**, running on a Raspberry Pi in his office — on his own Facebook, with a [technical writeup as a GitHub gist](https://gist.github.com/VivianBalakrishnan/a7d4eec3833baee4971a0ee54b08f322) describing the stack in full. By the time he walked on stage at the Capitol Theatre, that writeup had been picked up by SCMP, dissected on X, and reposted by half of AI Twitter. The expectations in the room were, fair to say, high.
 
 What we got was not a politician's speech. It was much more interesting than that. The full session is on YouTube (his segment begins around the 45-minute mark) and what's below is built directly off the transcript.
 
@@ -58,18 +58,19 @@ He kept returning to three words: **decentralisation, individualisation, bespoke
 
 The proof of that claim was the rest of the talk: a walk-through of his own setup, built by a sitting Foreign Minister with no formal software background, on parts that anyone in the room could buy or download for themselves.
 
-## The build itself: NanoClaw, Neman, and a three-year-old Raspberry Pi
+## The build itself: NanoClaw, mnemon, and a three-year-old Raspberry Pi
 
-Here is, in his own framing, the stack he actually runs every day:
+Here is, in his own framing, the stack he actually runs every day (cross-checked against his [published gist](https://gist.github.com/VivianBalakrishnan/a7d4eec3833baee4971a0ee54b08f322)):
 
-- **Hardware.** *"My most daily-used agent is running off a Raspberry Pi which is at least two or three years [old]. All it has is 8 GB of RAM."* That's it. That's the machine.
-- **Agent harness: NanoClaw**, by **Gavriel Cohen** (CEO of NanoCo, who took the stage at 9am right after the minister to talk about NanoClaw's own internal agent factory). He had originally been excited by the broader hype around "open-claw"-style agents but ruled them out for security reasons given his role. NanoClaw won him over because the codebase is short enough that *"even an idiot like me can read and sort of understand [it]"*, it's containerised (the surgeon in him spoke up here: *"there's no such thing as a routine operation and things will go wrong, and when they do break, hopefully you want them to break within barriers"*), and it has effectively no config — the LLM handles the customisation, which means *"everyone running an instance of NanoClaw is running an individualised system."*
-- **Brains:** Claude (he was clear NanoClaw v2 should treat *all* major models as first-class citizens — he's asked Gavriel for this by 15 June).
+- **Hardware.** A **Raspberry Pi 5** (aarch64), 8 GB of RAM. *"My most daily-used agent is running off a Raspberry Pi which is at least two or three years [old]."* That's it. That's the machine.
+- **Agent harness: [NanoClaw](https://github.com/qwibitai/nanoclaw)**, by **Gavriel Cohen** (CEO of NanoCo, who took the stage at 9am right after the minister to talk about NanoClaw's own internal agent factory). A Node.js + TypeScript orchestrator that runs the **Claude Agent SDK** inside isolated **Docker containers**. He had originally been excited by the broader hype around "open-claw"-style agents but ruled them out for security reasons given his role. NanoClaw won him over because the codebase is short enough that *"even an idiot like me can read and sort of understand [it]"*, it's containerised (the surgeon in him spoke up here: *"there's no such thing as a routine operation and things will go wrong, and when they do break, hopefully you want them to break within barriers"*), and it has effectively no config — the LLM handles the customisation, which means *"everyone running an instance of NanoClaw is running an individualised system."*
+- **Brains:** Claude, via the Claude Agent SDK (he was clear NanoClaw v2 should treat *all* major models as first-class citizens — he's asked Gavriel for this by 15 June).
+- **Credentialing: OneCLI**, a proxy that means the containers never see raw API keys — important given his job, and one of the things he specifically called out as not having had to write himself.
 - **WhatsApp bridge: Baileys.** *"I suspect it's probably not entirely in keeping with what Meta or WhatsApp would like us to do, because it's actually simulating… a pseudo-terminal."* He says this with a small smile.
-- **Voice: Whisper**, so he can talk to it rather than type, and it talks back.
-- **Memory: Neman** — *"this obscure piece of software… I still haven't met the developers… a memory system with graphs."* Entities as nodes, edges for causality, temporal relationships, semantic links.
-- **Semantic search: Ollama running locally** with an embedding model, so memory recall isn't limited to keyword match.
-- **Synthesis: Andrej Karpathy's "LLM-supervised wiki generation" pattern**, layered on top of the memory graph — i.e. the system doesn't just retrieve facts, it synthesises wiki pages about people, countries, topics, that get re-read on every relevant query.
+- **Voice: whisper.cpp** running on-device — so the audio never leaves the Pi.
+- **Memory: mnemon** — *"this obscure piece of software… I still haven't met the developers… a memory system with graphs."* A SQLite-backed graph database where each entry has content, category, importance score, tags, timestamp, and edges to related entries.
+- **Semantic search:** **Ollama** running locally with the **nomic-embed-text** embedding model — so memory recall isn't limited to keyword match, and no embedding traffic leaves the Pi either.
+- **Synthesis: Andrej Karpathy's "LLM-supervised wiki generation" pattern**, layered on top of the memory graph — the system doesn't just retrieve facts, it synthesises wiki pages (organised into `entities/`, `concepts/`, and `timelines/`) about people, countries, topics, that get re-read on every relevant query.
 - **UX: Obsidian**, syncing through Apple iCloud, which gives him a "personal cloud" of curated material and generated wiki pages he can pull up anywhere.
 - **And — a small detail he dropped almost in passing —** the slides for this very keynote were generated by Claude.
 
@@ -115,7 +116,7 @@ If there is one technical theme he kept returning to, it was memory.
 
 > *"Memory — it is a very human, and I think it is the great unsolved part of this frontier."*
 
-This is why he built around Neman + Karpathy's wiki pattern rather than the more common "dump documents into a vector DB and do RAG" approach. His system extracts atomic facts from each ingested document into a graph; then synthesises *wiki pages* about each entity from those facts; then retrieves those synthesised pages as context on every query. The effect, he said, is that the system slowly accumulates an actual model of *his world* — who he knows, what he's said, what he's read — rather than just a searchable haystack.
+This is why he built around mnemon + Karpathy's wiki pattern rather than the more common "dump documents into a vector DB and do RAG" approach. His system extracts atomic facts from each ingested document into a graph; then synthesises *wiki pages* about each entity from those facts; then retrieves those synthesised pages as context on every query. The effect, he said, is that the system slowly accumulates an actual model of *his world* — who he knows, what he's said, what he's read — rather than just a searchable haystack.
 
 This is a useful conceptual reframe even for people who will never touch a graph database. **Most of what makes an AI assistant feel useful is not the model — it's the structured, accumulated, well-curated record of you and your work that the model gets to read every time you ask it something.** Build the record, and the model becomes a colleague. Skip the record, and the model is a stranger every morning.
 
