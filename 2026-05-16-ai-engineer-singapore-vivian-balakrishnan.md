@@ -160,4 +160,8 @@ The talk had a clean three-part structure of its own; here are the three threads
 
 3. **The barrier to entry is genuinely low now.** A retired eye surgeon, in spare time, on a three-year-old Raspberry Pi with 8 GB of RAM, built a system he uses every day to do a globally consequential job. Whatever the old story was about why this stuff is for someone else — it has aged badly.
 
-If any of the above resonates and you want to compare notes, the AI Team and IITS are around. We also, as it happens, have a Raspberry Pi.
+---
+
+Okay — that's all for the minister. Day 2 had another thirty-plus sessions running across four tracks that I haven't touched here; a few of them — Stripe's Minions, Cursor's design talk, Cerebras and Z.ai on inference and long-horizon tasks, ElevenLabs on conversational speech — are worth their own posts, and I'll work through them over the coming days. Day 3 is happening at the Capitol Kempinski as I write this; a writeup of that will follow once the dust settles.
+
+If any of the above resonates in the meantime and you want to compare notes, the AI Team and IITS are around. We also, as it happens, have a Raspberry Pi.
