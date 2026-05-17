@@ -1,6 +1,8 @@
-# The Minister Who Codes — Dr Vivian Balakrishnan at AI Engineer Singapore
+# The Forward Deployed Minister — Dr Vivian Balakrishnan at AI Engineer Singapore
 
 This is the writeup I promised at the end of the Day 1 post. The keynote everyone in the building had come to see was Dr Vivian Balakrishnan — Minister for Foreign Affairs, former Minister-in-charge of the Smart Nation Initiative, retired eye surgeon, and (this still feels strange to type) one of the very few sitting government ministers anywhere in the world who actively writes code.
+
+Someone in the coffee queue afterwards called him a *"forward deployed minister"* — a riff on the **forward deployed engineer**, the now-fashionable role for engineers who embed directly with customers, build prototypes in the field, and refuse to be insulated from the actual work. It is exactly the right framing for what he did on stage. He wasn't there as a politician describing AI from the outside. He was there as a practitioner, deployed into his own workflow, showing the room what he had built with his own hands.
 
 He had set the bar himself a few weeks earlier by quietly posting the full architecture of his personal AI assistant — **NanoClaw**, running on a Raspberry Pi in his office — on his own Facebook. By the time he walked on stage at the Capitol Theatre, that writeup had been picked up by SCMP, dissected on X, and reposted by half of AI Twitter. The expectations in the room were, fair to say, high.
 
@@ -118,6 +120,8 @@ He ended on a Singapore-policy note that landed clearly in the room. Quoting the
 And his own framing on top of that:
 
 > *"I'm a believer in deployment at the edge. I'm a surgeon. I believe in doing. I believe in fixing. I believe that's where lives are saved and value is created."*
+
+That line, more than any other, is what makes the "forward deployed minister" joke work. The whole talk is an argument that the people creating real value with AI are the ones embedded in actual workflows — doing, fixing, deploying — rather than the ones theorising about it from a distance. He was modelling the behaviour he wanted his audience, his civil servants, and his counterparts in other capitals to adopt.
 
 The public-policy goal, in his words, is *democratisation of these tools* — and therefore *a decentralised, ground-up approach*. He then gestured at the room and ended on the conference itself:
 
