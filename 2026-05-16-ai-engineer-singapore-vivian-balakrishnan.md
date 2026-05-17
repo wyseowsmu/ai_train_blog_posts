@@ -1,91 +1,140 @@
 # The Minister Who Codes — Dr Vivian Balakrishnan at AI Engineer Singapore
 
-Day two of AI Engineer Singapore moved off-campus to the Capitol Kempinski, and the keynote everyone in the building had come to see was Dr Vivian Balakrishnan — Minister for Foreign Affairs, former Minister-in-charge of the Smart Nation Initiative, trained ophthalmologist, and (this still feels strange to type) one of the very few sitting government ministers anywhere in the world who actively writes code.
+This is the writeup I promised at the end of the Day 1 post. The keynote everyone in the building had come to see was Dr Vivian Balakrishnan — Minister for Foreign Affairs, former Minister-in-charge of the Smart Nation Initiative, retired eye surgeon, and (this still feels strange to type) one of the very few sitting government ministers anywhere in the world who actively writes code.
 
-He had set the bar himself a few weeks earlier. On 21 April he had quietly posted, on his own Facebook and a personal GitHub gist, the full technical architecture of his personal AI assistant — a thing called **NanoClaw**, running on a Raspberry Pi in his office, that he uses every day. By the time he walked on stage on Saturday morning, that writeup had been picked up by SCMP, dissected on X, and reposted by half of AI Twitter. The expectations in the room were, fair to say, high.
+He had set the bar himself a few weeks earlier by quietly posting the full architecture of his personal AI assistant — **NanoClaw**, running on a Raspberry Pi in his office — on his own Facebook. By the time he walked on stage at the Capitol Theatre, that writeup had been picked up by SCMP, dissected on X, and reposted by half of AI Twitter. The expectations in the room were, fair to say, high.
 
-What we got was not a politician's speech. It was much more interesting than that.
+What we got was not a politician's speech. It was much more interesting than that. The full session is on YouTube (his segment begins around the 45-minute mark) and what's below is built directly off the transcript.
 
-## The headline: stop reaching for the LLM hammer
+He opened by introducing himself with characteristic dryness: *"I'm actually a retired eye surgeon. Took a detour into politics for perhaps too long… I assemble watches, I reprogram appliances, and now there's some other stuff which is what I'm going to talk about today."* And then, unusually for a keynote, he jumped straight to the end and stated his three takeaways upfront — *"you can forget everything I've said but just bear these things in mind."* The whole rest of the talk hung off those three.
 
-The line that has been quoted in every write-up since, and rightly so:
+## Takeaway 1 — You cannot outsource your personal understanding
 
-> *"We should beware of just trying to throw every problem, and every step in a solution, at a large-language model."*
+> *"We're now at an age when you can outsource a lot of stuff — calculations, computation, memory, replication, dissemination of knowledge. The one thing which you cannot outsource is your personal understanding. And if you are in a position of authority, you can delegate work. You can't delegate accountability."*
 
-In a room of 1,000 builders mid-way through the most LLM-soaked event of the year, this was a slightly heretical opening. His point wasn't anti-LLM — he is, manifestly, an LLM enthusiast — it was an engineer's point about **using the right tool for the job**. Rule-based expert systems still work. Deterministic code still works. Traditional, "old-fashioned" AI — the kind programmed step-by-step by humans — still works, and is often faster, cheaper, and easier to debug than an LLM call.
+This is the line I most want senior leadership at SMU to hear. The point is not anti-AI — he is plainly an AI enthusiast. The point is that the *output* of an AI-augmented workflow still has to be owned by a human being who genuinely understands it. Especially if that human is the one signing things, deciding things, or being held to account for them.
 
-He drove the point home with a comparison nobody else at the conference would have made: the human brain runs on roughly **20 watts**. The data centres training our frontier models run on something closer to the output of a small nuclear plant. Whatever we're doing, he said, **it is clearly not the most efficient possible architecture for thought** — and we should hold that fact in mind every time we reach for an LLM to do something a regex would do.
+Later in the talk he pushed this further into a line he attributed (somewhat suspiciously) to Claude, but said he agreed with anyway:
 
-The broader argument he was making: an "AI system" in 2026 is *not* one giant model. It's a small architecture — a graph of components, some of which are LLMs and most of which aren't. The skill is knowing which piece to use where.
+> *"You cannot govern a technology that you have only been briefed on. You'd better get your hands dirty — and then you understand both the potential and the limits and the problems."*
 
-**My take for SMU folks:** this is the unglamorous version of the same lesson Fuad Ali made on Day 1. Most of the value in deploying AI well comes from the *plumbing around the model*, not the model itself. If a vendor is selling you "an AI" as if it's a single magic box, that's a sign they haven't yet built one that works in production.
+He explicitly framed that as a shoutout to his government colleagues. It applies just as well to deans, directors, and department heads.
 
-## The demo: NanoClaw, a "second brain for a diplomat"
+## Takeaway 2 — Real value is created workflow by workflow, not at the frontier
 
-The reason the keynote sold out is that Dr Balakrishnan did something almost no public figure ever does: he showed us his actual workflow. Not a sanitised marketing version — the *real* one, with the file paths and the API costs and the warts.
+He pointed the audience at a recent Financial Times letter by **Professor Neil Lawrence** (University of Cambridge, machine learning), and summarised the argument like this:
 
-Here's what he runs, in plain English:
+> *"There's a lot of hype about AI models, data centres, top-down systems, rules, governments. That's macro. But his hypothesis is that real value for the economy and society is created at the ground level — workflow by workflow, sector by sector, department by department, and in fact at the individual level."*
 
-- **Hardware: a Raspberry Pi 5.** About **US$80**. Sits in his office. That's the whole machine.
-- **Brains: Claude**, accessed via the Anthropic API. **Roughly US$5–20 per month** in usage, at his conversational volume.
-- **Memory: a custom knowledge graph** he calls `mnemon` — a SQLite database where every speech he's given, every article he's read, every meeting note, gets broken down into discrete *facts* and stored as nodes with relationships. Not a folder of PDFs. A graph.
-- **Inputs: Obsidian on his phone.** He clips articles, dictates voice notes, writes thoughts. They flow into NanoClaw automatically. Voice gets transcribed locally on the Pi using **Whisper**, so the audio never leaves his desk.
-- **Interfaces: WhatsApp, Telegram, Slack, Discord, and Gmail.** He talks to it on whichever channel he happens to be on. It talks back the same way.
-- **The two intellectual ancestors he cited:** *NanoClaw* itself (the open-source agent harness by Gavriel Cohen, who joined him on stage right after the keynote) and *the LLM Wiki pattern* described by Andrej Karpathy.
+His own elaboration:
 
-The clever bit — the bit he was most pleased with — is how the memory works. He pushed back, gently, on the orthodoxy that says "just throw your documents into a vector DB and do RAG." His system does something different: it **extracts atomic facts** from each document into the graph, then **synthesises those facts into human-readable wiki pages** about each topic, person, and event. When he asks NanoClaw a question, it doesn't just retrieve passages — it retrieves the *synthesised wiki pages* it has built about whatever he's asking about, and injects those as context.
+> *"I know you guys are great and I know the guys working on frontier models are incredible, but the real payoff is when ordinary people — teachers, lawyers, technicians, managers, doctors, or even ministers — are actually using the tools which are already available, already invented. People who know their jobs and are empowered by these tools. That's how you create real value for society and for the economy."*
 
-The effect, he said, is that the system gets *smarter about him and his world* the longer he uses it. It learns who he knows, what he's said, what he's read, what he believes. After a year of running, it now writes drafts that sound unmistakably like him — because they are, in a non-trivial sense, written *from* him.
+He kept returning to three words: **decentralisation, individualisation, bespoke**. The future he was describing is not one giant model serving humanity from a data centre. It is millions of small, personal, idiosyncratic systems — one per knowledge worker — each fitted to that person's actual job.
 
-The quote that's been everywhere since:
+## Takeaway 3 — The barriers have collapsed
 
-> *"It answers every question, researches topics, provides daily updates, drafts speeches and condenses information. It has become invaluable — I don't dare switch it off."*
+> *"I sincerely believe the barriers for achieving all this have collapsed. The tools have already been availed. It's a matter of getting people to understand what tools are out there, assemble their own tools, and put ourselves on a completely different trajectory."*
 
-He grinned when he said the last bit. So did the room.
+The proof of that claim was the rest of the talk: a walk-through of his own setup, built by a sitting Foreign Minister with no formal software background, on parts that anyone in the room could buy or download for themselves.
 
-## Why a Foreign Minister built this himself
+## The build itself: NanoClaw, Neman, and a three-year-old Raspberry Pi
 
-This was the part of the talk I most wanted senior leadership at SMU to hear.
+Here is, in his own framing, the stack he actually runs every day:
 
-He was clear that he didn't have to build NanoClaw. He has staff. He has briefings. The Ministry has resources. He built it anyway, on his own time, on his own kit, because — in his words — **you cannot lead a transformation you have never personally experienced.**
+- **Hardware.** *"My most daily-used agent is running off a Raspberry Pi which is at least two or three years [old]. All it has is 8 GB of RAM."* That's it. That's the machine.
+- **Agent harness: NanoClaw**, by **Gabriel Cohen** (who took the stage right after him). He had originally been excited by the broader hype around "open-claw"-style agents but ruled them out for security reasons given his role. NanoClaw won him over because the codebase is short enough that *"even an idiot like me can read and sort of understand [it]"*, it's containerised (the surgeon in him spoke up here: *"there's no such thing as a routine operation and things will go wrong, and when they do break, hopefully you want them to break within barriers"*), and it has effectively no config — the LLM handles the customisation, which means *"everyone running an instance of NanoClaw is running an individualised system."*
+- **Brains:** Claude (he was clear NanoClaw v2 should treat *all* major models as first-class citizens — he's asked Gabriel for this by 15 June).
+- **WhatsApp bridge: Baileys.** *"I suspect it's probably not entirely in keeping with what Meta or WhatsApp would like us to do, because it's actually simulating… a pseudo-terminal."* He says this with a small smile.
+- **Voice: Whisper**, so he can talk to it rather than type, and it talks back.
+- **Memory: Neman** — *"this obscure piece of software… I still haven't met the developers… a memory system with graphs."* Entities as nodes, edges for causality, temporal relationships, semantic links.
+- **Semantic search: Ollama running locally** with an embedding model, so memory recall isn't limited to keyword match.
+- **Synthesis: Andrej Karpathy's "LLM-supervised wiki generation" pattern**, layered on top of the memory graph — i.e. the system doesn't just retrieve facts, it synthesises wiki pages about people, countries, topics, that get re-read on every relevant query.
+- **UX: Obsidian**, syncing through Apple iCloud, which gives him a "personal cloud" of curated material and generated wiki pages he can pull up anywhere.
+- **And — a small detail he dropped almost in passing —** the slides for this very keynote were generated by Claude.
 
-He framed it as a duty. If he is going to make decisions, as a minister, about how Singapore engages with AI globally, then he had better understand, at the level of his own fingers on a keyboard, what these systems can and can't do. He doesn't trust the demos. He doesn't trust the vendor pitches. He doesn't trust the breathless press. He trusts the thing he has run himself, in his own office, for a year.
+The job it does for him, in his words:
 
-He landed two lines on this, both of which I wrote down:
+> *"This month I'm visiting 12 countries… I will have to meet hundreds of people. I will have to understand each country's economy, geography, culture, history, war and peace. I need to know people as individuals and not just from a brief. There's a huge cognitive overload on every single diplomat. The question is how can I turbocharge this process — so that if I need a fact or a factoid, I can get it anywhere, and I can go down the rabbit hole if need be."*
 
-> *"AI agents have crossed a threshold I did not expect so soon. Not just impressive demos — but practical tools for daily use."*
+And on whether it actually works, the line that everyone has been quoting since:
 
-> *"The diplomat who learns to work with AI will have a meaningful edge. I think that edge is now."*
+> *"I have not dared to switch it off."*
 
-You can read "diplomat" as "lawyer", "professor", "administrator", "researcher", "manager" — pick your role. The argument is the same.
+He delivered it deadpan. The room laughed. He also let slip that NanoClaw v1 is still running on one machine while he tries v2 on another, *"because the transition is not at all smooth"* — which is exactly the kind of detail you only get from a person who has genuinely been using a thing in production, rather than presenting one.
 
-## On the human role — and why the touch still matters
+He was also pointedly modest about the engineering:
 
-For all the technical content, the keynote was at heart a humanist talk. He returned, several times, to the limits of what these systems can do. A few of the threads:
+> *"You know, there's this whole thing about vibe coding. I won't even dare to claim I was vibe coding. I was just assembling tools."*
 
-- **AI is good at synthesis, bad at judgment under genuine uncertainty.** When the answer to a question is in the training data, the model finds it. When the answer requires a *new* call — a moral one, a political one, a contextual one nobody has made before — the model defers to whoever wrote its system prompt. Diplomats, he noted dryly, are paid for the second kind of call.
-- **Tacit knowledge is still the moat.** A career's worth of relationships, read-the-room instincts, knowing when not to speak — none of this is in any model. Some of it can be coaxed into a knowledge graph by patient documentation. Most of it cannot.
-- **The human touch in diplomacy is non-negotiable.** A summit is not a transcript. A handshake is not a vector. He was emphatic on this: AI augments the diplomat, it does not replace the diplomat. The same is true, by extension, of doctors, teachers, advisors, leaders.
-- **Don't be intimidated.** This was the line he wanted students and civil servants and ordinary employees to hear: the technology has become *easier* to access, not harder. The barrier to entry has collapsed. A Raspberry Pi and an API key. You don't need permission. You need curiosity.
+But — and this is the part I want non-engineers at SMU to hear — he is clear that *reading* code matters even when you aren't writing it. He reviews the code NanoClaw asks him to approve before granting bash access. *"It does help if you don't understand coding, so you understand what's going on, even if you're not actually typing and editing code in the raw."*
 
-## The five things I want everyone at SMU to take away
+## "For a man with a hammer, everything looks like a nail"
 
-If you only remember five things from this post:
+The second half of the talk pulled in the opposite direction from the demo: an explicit warning *against* over-using LLMs.
 
-1. **An LLM is not the answer to every question.** It's one component in a system. Use it where it adds value; use boring, predictable code everywhere else. The teams who win at AI are the ones who know the difference.
+> *"We should beware of just trying to throw every problem, and every step in a solution, at an LLM. It reminds me of the old proverb — for a man with a hammer, everything looks like a nail."*
 
-2. **Memory is the real frontier.** The reason NanoClaw feels personal is not the model — it's the slowly-accumulated, well-structured store of facts and synthesised pages *about him* that the model gets to read on every query. A model with no memory is a stranger every morning. A model with the right memory is a colleague.
+His reasoning was an unusual mix of economics and biology. On the economics:
 
-3. **You learn this by doing it.** A sitting Foreign Minister of a developed country found the time to build his own AI system, on his own Pi, on his own evenings. The single biggest predictor of who is going to thrive in the next five years is not credentials or seniority — it's whether you've actually put your hands on this stuff.
+> *"Tokens are not cheap. Compute power is limited. Electricity prices have risen. Wars do not help. The prices the AI majors are currently charging us — I think we all know we're enjoying, in effect, a subsidy."*
 
-4. **The cost has collapsed.** Eighty US dollars of hardware. Five to twenty dollars a month in API usage. Whatever the perceived barrier to entry in your head is — it is almost certainly lower than that. Pilot it on a personal project before you pilot it at work.
+On the biology — and this is where being an eye surgeon shows up:
 
-5. **The "moat" is increasingly *your* context, not *their* model.** Everyone has access to the same frontier models. What they don't have is the canonical, well-curated, fact-by-fact record of how *your* institution thinks and works. That asset is built by humans, deliberately, over time. Start building it now.
+> *"As a biologist, [I think] in the end some kind of neuro-symbolic system, rather than just the LLM model… I have some sympathy for Yann LeCun, who says LLMs are great, but actually that's not the way we've solved it in nature. If you look at the human brain, I suspect we have fewer layers of computation in the human brain than in many of the large language models which we have today. And I can tell you as an eye surgeon, the cortical computation for vision, for language, for cognition are often based on far more efficient structures than the energy-gobbling systems which we have today."*
+
+The practical implication: *"There is still a role for deterministic systems. There is still a role for expert rule-based systems."* Use the LLM where it adds value. Use boring, predictable, *cheap* code everywhere else.
+
+And the line he wanted to leave the engineers with:
+
+> *"Tools matter more than models."*
+
+## Memory, and the unsolved frontier
+
+If there is one technical theme he kept returning to, it was memory.
+
+> *"Memory — it is a very human, and I think it is the great unsolved part of this frontier."*
+
+This is why he built around Neman + Karpathy's wiki pattern rather than the more common "dump documents into a vector DB and do RAG" approach. His system extracts atomic facts from each ingested document into a graph; then synthesises *wiki pages* about each entity from those facts; then retrieves those synthesised pages as context on every query. The effect, he said, is that the system slowly accumulates an actual model of *his world* — who he knows, what he's said, what he's read — rather than just a searchable haystack.
+
+This is a useful conceptual reframe even for people who will never touch a graph database. **Most of what makes an AI assistant feel useful is not the model — it's the structured, accumulated, well-curated record of you and your work that the model gets to read every time you ask it something.** Build the record, and the model becomes a colleague. Skip the record, and the model is a stranger every morning.
+
+## On security — and an unusual answer
+
+A predictable concern at a talk by a sitting Foreign Minister: what happens if his system is compromised? His answer was characteristically dry:
+
+> *"Even if you hack my system, the most you'll get from it is my phone number. You will get summaries of foreign policy — but since it's foreign policy which I have espoused, and in any case I have curated the stuff I've put in… even if you take my system, I think it will generate the foreign policy of Singapore anyway."*
+
+The serious point underneath the joke: *one way* of addressing AI security is to deliberately only put already-open-source, already-published material into the system in the first place — and then *subject your systems to a level of transparency and scrutiny that can be withstood*. Not the only way, and not appropriate for every context, but a useful framing for any team thinking about what data to let an AI touch.
+
+He did, however, flag the broader political picture — *"commercial competition, national security, cybersecurity, and superpower contestation"* — as the factors that will most shape the availability and speed of AI globally. That, he noted, is a separate political talk well worth a deep dive on another day.
+
+## Closing — democratisation, the edge, and a hack
+
+He ended on a Singapore-policy note that landed clearly in the room. Quoting the Economic Strategy Review Committee:
+
+> *"Singapore is not likely to be at the frontier of model development. But we can be at the frontier of deployment at scale."*
+
+And his own framing on top of that:
+
+> *"I'm a believer in deployment at the edge. I'm a surgeon. I believe in doing. I believe in fixing. I believe that's where lives are saved and value is created."*
+
+The public-policy goal, in his words, is *democratisation of these tools* — and therefore *a decentralised, ground-up approach*. He then gestured at the room and ended on the conference itself:
+
+> *"This conference was organised less than three months ago. 65 labs. All the people you meet here — this is all not even their day job. It's a hack, right? But this is the way I believe the future is going to be created."*
+
+Then he walked off stage, sat down next to **Gabriel Cohen**, the creator of NanoClaw, who I'll write up separately.
 
 ---
 
-He closed with a thought that I'm still chewing on. Asked from the audience what worried him most about the coming decade, he didn't talk about misalignment, or autonomous weapons, or any of the usual stage-friendly answers. He said the thing he worried about most was **complacency** — that countries, companies, and individuals would assume they had time, when in fact the curve was steeper than it looked from the bottom of it. Singapore, he said, intended not to be complacent. He suggested the rest of us not be either.
+## Three things I want everyone at SMU to take away
 
-Then he walked off stage, sat down next to Gavriel Cohen (who built the NanoClaw harness he uses), and the two of them did a fireside chat about open-source agent design that I'll write up separately.
+I'll try to mirror his structure here. If you only remember three things:
 
-Come find any of us from the AI Team or IITS if you want to talk about what a Singapore-university version of NanoClaw might look like for our own work. We have some ideas. And, more importantly, a Raspberry Pi.
+1. **You cannot delegate accountability.** AI can draft your report, prep your meeting, summarise your inbox, build your slides. None of that removes the requirement that *you* understand the thing you are putting your name on. The minister's whole point about "personal understanding" is the most senior-leadership-flavoured argument I've heard for actually using these tools yourself rather than receiving demos of them.
+
+2. **Value lives in workflows, not in models.** Everyone has access to the same frontier models. What separates the institutions that pull ahead from the ones that don't is whether they have done the unsexy work of *re-engineering an actual workflow* — a course, an admissions process, a finance close, a research review — around what AI can now do. Start with one workflow you know intimately. That's where your edge is.
+
+3. **The barrier to entry is now embarrassingly low.** A retired eye surgeon, in spare time, on a three-year-old Raspberry Pi with 8 GB of RAM, built a system he uses every day to do a globally consequential job. Whatever you have been telling yourself about why you can't start — it's almost certainly wrong. The minister's closing instruction, with his blessing as a senior official: get your hands dirty.
+
+Come find any of us from the AI Team or IITS if you want to talk about what a Singapore-university version of this might look like for our own work. We have some ideas. And, more importantly, a Raspberry Pi.
